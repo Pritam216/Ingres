@@ -124,7 +124,7 @@ app.add_middleware(
 # Store file URLs in memory for the session
 uploaded_file_urls = []
 
-@app.post("/api/upload_csv/")
+@app.post("/backend/upload_csv/")
 async def upload_csv(files: list[UploadFile]):
     """
     Uploads CSV files to Vercel Blob Storage and returns their public URLs.
@@ -139,7 +139,7 @@ async def upload_csv(files: list[UploadFile]):
 
     return {"message": "Files uploaded successfully to Vercel Blob", "urls": uploaded_file_urls}
 
-@app.post("/api/ask/")
+@app.post("/backend/ask/")
 async def ask_question(question: str = Form(...)):
     """
     Creates an agent using CSV data from Vercel Blob URLs and answers a question.

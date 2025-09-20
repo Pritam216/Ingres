@@ -46,7 +46,7 @@ function App() {
     }
 
     try {
-      const res = await fetch("/api/upload_csv/", {
+      const res = await fetch("/backend/upload_csv/", {
         method: "POST",
         body: formData,
       });
@@ -89,7 +89,7 @@ function App() {
     setInput("");
 
     try {
-      const res = await fetch("/api/ask/", {
+      const res = await fetch("/backend/ask/", {
         // 👈 Change API path
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },

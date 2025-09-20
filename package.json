@@ -1,8 +1,13 @@
 {
+  "functions": {
+    "backend/**/*.py": {
+      "runtime": "python3.11"
+    }
+  },
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api"
+      "source": "/backend/(.*)",
+      "destination": "/backend"
     },
     {
       "source": "/(.*)",
