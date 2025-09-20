@@ -1,13 +1,9 @@
----
-
-```markdown
 # 🚀 Ingres Chatbot – SIH 2025 Demo Project
 
 An **AI-powered Conversational Assistant** built with **FastAPI (backend)** and **React (frontend)**, designed to provide a **ChatGPT/Gemini-like experience** for interacting with structured data (CSV files) in real-time.  
 
 This repository represents our **demo prototype** for **Smart India Hackathon (SIH) 2025** – showcasing how users can upload datasets, query them naturally, and receive instant AI-driven insights.  
 
----
 
 ## 🎯 Project Vision (SIH 2025)
 
