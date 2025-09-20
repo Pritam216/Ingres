@@ -6,3 +6,5 @@ langchain-experimental
 pandas
 python-multipart
 tabulate
+vercel-kv
+requests
