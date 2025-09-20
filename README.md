@@ -154,7 +154,5 @@ This project is licensed under the **MIT License** – free to use and modify.
 
 ```
 
----
-
 Do you want me to also **make the README look visually rich** (with emojis, badges like “Made with FastAPI” or “Powered by Gemini API”)? That will make it **hackathon-ready and standout**.
-```
+
