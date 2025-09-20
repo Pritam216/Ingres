@@ -35,6 +35,8 @@ function App() {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
+  // ... all the code before handleFileUpload ...
+
   const handleFileUpload = async () => {
     if (files.length === 0) return;
     setIsUploading(true);
@@ -55,7 +57,7 @@ function App() {
           ...prev,
           {
             sender: "bot",
-            text: `✅ Files uploaded successfully: ${data.filenames.join(
+            text: `✅ Files uploaded successfully to Vercel Blob: ${data.urls.join(
               ", "
             )}`,
           },
@@ -88,6 +90,7 @@ function App() {
 
     try {
       const res = await fetch("/api/ask/", {
+        // 👈 Change API path
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams({ question: userMsg.text }),
