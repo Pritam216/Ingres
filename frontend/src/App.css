@@ -1,0 +1,334 @@
+:root {
+  --bg-color: #1a1a2e;
+  --pane-bg: #27273d;
+  --text-color: #f0f0f0;
+  --primary-color: #4f46e5;
+  --secondary-color: #8c88f1;
+  --bubble-bg-bot: #31314a;
+  --bubble-bg-user: #4f46e5;
+  --border-color: #4a4a6b;
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-color);
+}
+
+/* --- Sidebar Styles --- */
+.sidebar {
+  width: 350px;
+  background-color: var(--pane-bg);
+  padding: 2rem;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  overflow-y: scroll; /* Allows scrolling but hides the bar via the rules below */
+  flex-shrink: 0;
+}
+
+/* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.sidebar {
+  scrollbar-width: none;
+}
+
+.sidebar-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+.suggestions-box, .features-box {
+  background-color: var(--bubble-bg-bot);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.suggestions-box h4, .features-box h4 {
+  margin-top: 0;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.suggestions-box ul, .features-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.suggestions-box li, .features-box li {
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.suggestions-box li {
+  background-color: var(--pane-bg);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.suggestions-box li:hover {
+  background-color: var(--primary-color);
+}
+
+.features-box li {
+  padding: 0.75rem;
+  background-color: var(--pane-bg);
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* --- Main Chat Pane Styles --- */
+.main-pane {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  background-color: var(--pane-bg);
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+.chat-box {
+  flex-grow: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.message {
+  display: flex;
+  margin-bottom: 1.5rem;
+  align-items: flex-start;
+}
+
+.message.user {
+  flex-direction: row-reverse;
+}
+
+.icon {
+  font-size: 1.5rem;
+  background-color: var(--bubble-bg-bot);
+  padding: 0.75rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.message.bot .icon {
+  color: var(--primary-color);
+  margin-right: 1rem;
+}
+
+.message.user .icon {
+  color: var(--secondary-color);
+  margin-left: 1rem;
+  margin-right: 0;
+}
+
+.bubble {
+  max-width: 75%;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.message.bot .bubble {
+  background-color: var(--bubble-bg-bot);
+}
+
+.message.user .bubble {
+  background-color: var(--bubble-bg-user);
+}
+
+/* --- Input Area Styles --- */
+.chat-input-area {
+  background-color: var(--pane-bg);
+  border-top: 1px solid var(--border-color);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.chat-input-area input {
+  flex-grow: 1;
+  background-color: var(--bubble-bg-bot);
+  color: var(--text-color);
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+}
+
+.chat-input-area input:focus {
+  outline: 2px solid var(--primary-color);
+}
+
+.upload-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.upload-label, .upload-button, .send-button {
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.upload-label {
+  background-color: var(--bubble-bg-bot);
+  color: var(--text-color);
+  padding: 1rem;
+  border-radius: 1rem;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+}
+
+.upload-label:hover {
+  background-color: var(--primary-color);
+}
+
+.upload-button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-size: 1.25rem;
+}
+
+.upload-button:hover:not(:disabled) {
+  background-color: var(--secondary-color);
+}
+
+.upload-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.send-button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.send-button:hover {
+  background-color: var(--secondary-color);
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 280px;
+    z-index: 10;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+}
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+  .sidebar {
+    display: none;
+  }
+  .main-pane {
+    height: 100vh;
+  }
+}
+
+/* --- Action Buttons --- */
+.bubble-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    max-width: 75%; /* Ensure it aligns with the bubble */
+}
+
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+/* --- Action Buttons --- */
+.bubble-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    max-width: 75%; /* Ensure it aligns with the bubble */
+}
+
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.action-button {
+    background-color: #007bff; /* Example: blue background */
+    color: white; /* White text color */
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.action-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

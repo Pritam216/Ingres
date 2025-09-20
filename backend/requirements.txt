@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+langchain
+langchain-google-genai
+langchain-experimental
+pandas
+python-multipart
+tabulate
