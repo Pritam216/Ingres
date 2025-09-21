@@ -4,7 +4,7 @@ An **AI-powered Conversational Assistant** built with **FastAPI (backend)** and 
 
 This repository represents our **demo prototype** for **Smart India Hackathon (SIH) 2025** – showcasing how users can upload datasets, query them naturally, and receive instant AI-driven insights.  
 
-<img width="1919" height="944" alt="image" src="https://github.com/user-attachments/assets/1905af6b-c053-4f32-8f99-71baafb1be5e" />
+<img width="1919" height="939" alt="image" src="https://github.com/user-attachments/assets/89830f69-12e4-428e-a5a8-ecfa36d4f9ce" />
 
 ## 🎯 Project Vision (SIH 2025)
 
