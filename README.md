@@ -104,7 +104,7 @@ Frontend runs at: **[http://localhost:3000/](http://localhost:3000/)**
 
 Check out our **demo walkthrough video** here:
 
-[![Ingres Chatbot Demo](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
+[![Ingres Chatbot Demo](https://youtu.be/MhipcUosp6U?si=Y4F5fshDjtEIS2Oj)
 
 ---
 
