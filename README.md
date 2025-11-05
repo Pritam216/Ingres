@@ -152,5 +152,3 @@ This project is licensed under the **MIT License** – free to use and modify.
 ---
 
 🌟 *Let’s build the future of conversational AI for India!* 🌟
-
-```
